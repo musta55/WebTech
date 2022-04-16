@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="mt-2 container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1"
+                        (click)="addNewProduct()">add new product </button></span>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Sort
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                              <button class="dropdown-item" type="button">Price</button>
+                              <button class="dropdown-item" type="button">Another action</button>
+                              <button class="dropdown-item" type="button">Something else here</button>
+                            </div>
+                          </div>
+
+            </div>
+            <div class="col-md-7">
+                <div class="input-group">
+                    <input type="text" class="form-control rounded mr-1" placeholder="Search" aria-label="Search"
+                        aria-describedby="search-addon" [(ngModel)]="searchString" />
+                    <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1"
+                            (click)="searchProduct()">search</button></span>
+                    <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1"
+                            (click)="clearSearch()">clear</button></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="mt-2 container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Status</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tr *ngFor="let product of products;let i=index">
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td *ngIf="!product.available">borrowed</td>
+            <td *ngIf="product.available">available</td>
+            <td> <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1" (click)="updateProduct(product, i)">update</button></span>
+                <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1" (click)="deleteProduct(product)">delete</button></span>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</div>
