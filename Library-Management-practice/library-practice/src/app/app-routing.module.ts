@@ -1,3 +1,5 @@
+import { ShowInputsComponent } from './show-inputs/show-inputs.component';
+import { TakeInputsComponent } from './take-inputs/take-inputs.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CheckoutsComponent } from './checkouts/checkouts.component';
@@ -13,6 +15,9 @@ const routes: Routes = [
   {path:'newproduct',component: NewproductComponent},
   {path:'update-product',component: UpdateProductComponent},
   {path:'checkouts',component: CheckoutsComponent},
+  {path:'employee',component: TakeInputsComponent},
+  {path:'view',component: ShowInputsComponent},
+
 ];
 
 @NgModule({

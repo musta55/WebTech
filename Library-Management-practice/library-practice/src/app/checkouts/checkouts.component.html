@@ -21,3 +21,27 @@
       <div class="col-4"><h1>Agar tum paas ho</h1></div>
     </div>
   </div>
+
+
+    <div class="mt-2 container">
+      <table class="table">
+          <thead>
+              <tr>
+                  <th scope="col">name</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Status</th>
+              </tr>
+          </thead>
+          <tr *ngFor="let show of showWish;let i=index">
+            <td>{{show.name}}</td>
+            <td>{{show.price}}</td>
+            <td *ngIf="!show.available">borrowed</td>
+            <td *ngIf="show.available">available</td>
+          </tr>
+        
+        
+      </table>
+  </div>
+   
+
+

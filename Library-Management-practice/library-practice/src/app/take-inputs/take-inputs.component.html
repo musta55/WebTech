@@ -1,0 +1,52 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+    <div class="col-2">
+        <label for="fname">First Name</label>
+    </div>
+    <div class="col-md">
+        <input type="text" class="form-control" id="fname" [(ngModel)]="takeInput.fname" [ngModelOptions]="{standalone: true}"/>
+    </div>
+    <div class="col"></div>
+    <div class="col-2">
+            <label for="lname">Last Name</label>
+        </div>
+        <div class="col-md">
+            <input type="text" class="form-control" id="lname" [(ngModel)]="takeInput.lname" [ngModelOptions]="{standalone: true}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <label for="email">Email</label>
+        </div>
+        <div class="col-md">
+            <input type="text" class="form-control" id="email" [(ngModel)]="takeInput.email" [ngModelOptions]="{standalone: true}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <label for="address">Address</label>
+        </div>
+        <div class="col-md">
+            <textarea rowss="3" class="form-control" id="address" [(ngModel)]="takeInput.address" [ngModelOptions]="{standalone: true}"></textarea>
+        </div>
+    </div>
+    <div class="row-m-2">
+        <div class="col-2">
+            <label for="file">Profile Picture</label>
+        </div>
+        <div class="col-md">
+            <input type="file" class="form-control" id="filepic" [(ngModel)]="takeInput.pic_src" [ngModelOptions]="{standalone: true}"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+        </div>
+        <div class="col-10">
+            <button class="btn btn-danger"  (click)="cancel()">Cancel</button>
+           
+        </div>
+        <div class="col-1">
+            <button class="btn btn-success" (click)="submit(takeInput)">Submit</button>
+        </div>
+    </div>
+</div>

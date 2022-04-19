@@ -12,12 +12,20 @@ export class ProductService {
 
   ];
 
+  wishList: Product[] = [
+  
+  ];
   productToBeUpdated: Product =new Product();
+  // wishList: Product =new Product();
   productToBeUpdatedIndex: number = 0;
   constructor() { }
   getProducts():Product[] {
     return this.products;
   }
+  getWishProducts():Product[] {
+    return this.wishList;
+  }
+
 
   addProduct(newProduct: Product):void {
     let id=Math.floor(Math.random()*10000+1);
@@ -29,6 +37,11 @@ export class ProductService {
   deleteProduct(givenProduct:Product):Product[] {
     this.products=this.products.filter(product => product.id!=givenProduct.id);
     return this.products;
+  }
+
+  wishProduct(givenProduct:Product):void {
+    this.wishList.push(givenProduct);
+   
   }
 
   setProductToBeUpdated(givenProduct: Product,givenProductIndex: number):void {

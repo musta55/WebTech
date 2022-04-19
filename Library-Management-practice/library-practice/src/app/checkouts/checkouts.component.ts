@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DetailService } from '../detail.service';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-checkouts',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private productService: ProductService, private route: Router) { }
 
   ngOnInit(): void {
   }
+
+  showWish = this.productService.getWishProducts();
 
 }

@@ -46,6 +46,7 @@
             <td *ngIf="product.available">available</td>
             <td> <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1" (click)="updateProduct(product, i)">update</button></span>
                 <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1" (click)="deleteProduct(product)">delete</button></span>
+                <span class="input-group-btn rounded"><button type="button" class="btn btn-outline-primary mr-1" (click)="wishProduct(product)">Add To Wishlist</button></span>
             </td>
         </tr>
     </table>

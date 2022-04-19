@@ -43,7 +43,11 @@ export class ProductListComponent implements OnInit {
   deleteProduct(givenProduct: Product): void {
     this.products = this.productService.deleteProduct(givenProduct);
   }
-
+  wishProduct(givenProduct: Product): void {
+   this.productService.wishProduct(givenProduct);
+   alert("Product added to the wishlist")
+  }
+  
   addNewProduct(): void {
     this.router.navigate(['newproduct']);
   }
